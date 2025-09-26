@@ -4,79 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная - Бумер</title>
-    <meta name="description" content="Краткое описание главной страницы вашего сайта">
-    <link rel="icon" href="assets/free-icon-killer-3716110.png
-    " type="image/x-icon">
+    <meta name="description" content="Тут про бумеры">
+    <link rel="icon" href="../assets/free-icon-round-16199695.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <!-- Шапка сайта -->
-    <header>
-      <a href="/">Бумер</a>
-      <!-- Главное меню навигации -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+    <!-- Шапка -->
+    <header class="site-header">
+      <a class="site-header__brand" href="/">Бумер</a>
+      <!-- Навигация -->
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </header>
-    <!-- Основное содержимое страницы -->
-    <main>
-      <h1>Добро пожаловать, Господин!</h1>
+    <!-- Основное содержимое -->
+    <main class="container">
+      <section class="hero">
+        <h1>Добро пожаловать, Братуха!</h1>
+        <p>Ваш надежный партнер в мире немецких некрух</p>
+      </section>
       <!-- Якорные ссылки -->
-      <nav>
-        <ul>
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#portfolio">Портфолио</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+      <nav class="anchor-nav">
+        <ul class="anchor-nav__list">
+          <li><a class="anchor-nav__link" href="#services">Услуги</a></li>
+          <li><a class="anchor-nav__link" href="#portfolio">Портфолио</a></li>
+          <li><a class="anchor-nav__link" href="#contacts">Контакты</a></li>
         </ul>
       </nav>
-      <!-- Секция 1 с якорем -->
-      <section id="services">
-        <h2>Наши услуги</h2>
-        <p>Описание предоставляемых услуг...</p>
-        <a href="#contacts">Связаться с нами</a> <!-- Якорная ссылка внутри страницы -->
+      <!-- 1 Якорь -->
+      <section class="section" id="services">
+        <h2 class="section__title">Наша гордость</h2>
+        <p>Мы делали</p>
+        <img class="img-responsive" src="../assets/bmw2.jpg" alt="Услуга" width="640" height="360" loading="lazy" srcset="../assets/bmw2.jpg 640w, ../assets/bmw2.jpg 960w" sizes="(max-width: 700px) 92vw, (max-width: 1200px) 640px, 960px">
+        <a class="anchor-nav__link" href="#contacts">Связаться с нами</a> 
       </section>
-      <!-- Секция 2 с якорем -->
-      <section id="portfolio">
-        <h2>Портфолио</h2>
+      <!-- 2 Якорь -->
+      <section class="section" id="portfolio">
+        <h2 class="section__title">Портфолио</h2>
         <p>Примеры наших работ...</p>
-        <a href="#services">Наши услуги</a> <!-- Якорная ссылка -->
+        <div class="media">
+          <video controls preload="metadata" poster="../assets/free-icon-round-16199695.png">
+            <source src="../assets/bmwVid.mp4" type="video/mp4">
+            <track kind="captions" srclang="ru" src="../assets/bmwVid.mp4" label="Русские субтитры" default>
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        <a class="anchor-nav__link" href="#services">Наши машинки</a> 
       </section>
-      <!-- Секция 3 с якорем -->
-      <section id="contacts">
-        <h2>Контактная информация</h2>
+      <!-- 3 Якорь -->
+      <section class="section" id="contacts">
+        <h2 class="section__title">Контактная информация</h2>
         <p>Наши контакты...</p>
-        <button id="openDialog" type="button">Написать нам</button>
-        <p><a href="contacts.html">Подробнее</a></p> <!-- Ссылка на отдельную страницу -->
+        <button class="form__button" id="openDialog" type="button">Написать нам</button>
+        <p><a href="contacts.html">Подробнее</a></p> 
       </section>
     </main>
-    <!-- Modal dialog -->
-    <dialog id="contactDialog" aria-labelledby="dialogTitle">
+    <!-- Модалка(форма) -->
+    <dialog class="modal" id="contactDialog" aria-labelledby="dialogTitle">
       <h2 id="dialogTitle">Обратная связь</h2>
-      <form id="contactForm" method="dialog" novalidate>
-        <label for="name">Имя</label>
-        <input id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" required autocomplete="email">
-        <label for="phone">Телефон</label>
-        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+      <form class="form" id="contactForm" method="dialog" novalidate>
+        <label class="form__label" for="name">Имя</label>
+        <input class="form__input" id="name" name="name" type="text" required minlength="2" autocomplete="given-name">
+        <label class="form__label" for="email">E-mail</label>
+        <input class="form__input" id="email" name="email" type="email" required autocomplete="email">
+        <label class="form__label" for="phone">Телефон</label>
+        <input class="form__input" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phoneHelp" placeholder="+7 (___) ___-__-__" required pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
         <small id="phoneHelp">Формат: +7 (900) 000-00-00</small>
-        <label for="date">Дата</label>
-        <input id="date" name="date" type="date">
-        <label for="topic">Тема</label>
-        <select id="topic" name="topic" required>
+        <label class="form__label" for="date">Дата</label>
+        <input class="form__input" id="date" name="date" type="date">
+        <label class="form__label" for="topic">Тема</label>
+        <select class="form__select" id="topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option>Вопрос</option>
           <option>Заказ</option>
         </select>
-        <label for="message">Сообщение</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <div class="form-actions">
-          <button type="button" id="closeDialog">Закрыть</button>
-          <button type="submit">Отправить</button>
+        <label class="form__label" for="message">Сообщение</label>
+        <textarea class="form__textarea" id="message" name="message" rows="4" required></textarea>
+        <div class="form__actions">
+          <button class="form__button" type="button" id="closeDialog">Закрыть</button>
+          <button class="form__button" type="submit">Отправить</button>
         </div>
       </form>
     </dialog>

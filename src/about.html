@@ -3,40 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас - Фанатка Айсгергерта</title>
+    <title>О нас - Бумер</title>
     <meta name="description" content="Узнайте больше о нашей компании и истории">
-    <link rel="icon" href="assets/free-icon-otaku-1881121.png" type="image/x-icon">
+    <link rel="icon" href="../assets/free-icon-round-16199695.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <header>
-      <a href="/">Фанатка Айсгергерта</a>
-      <!-- Главное меню навигации -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+    <header class="site-header">
+      <a class="site-header__brand" href="/">Бумер</a>
+      <!-- Меню навигации -->
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="about.html">О нас</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <!-- Простые "хлебные крошки" -->
-      <nav aria-label="Хлебные крошки">
+    <main class="container">
+      <!--"хлебные крошки" -->
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a href="index.html">Главная</a> →
         <span>О нас</span>
       </nav>
       <h1>О нашей компании</h1>
-      <section>
-        <h2>Ich bin clause, meine Donna Bella</h2>
+      <section class="section">
+        <h2 class="section__title">Ich bin clause, meine Donna Bella</h2>
         <p>Выходите бесы</p>
+        <img class="img-responsive" src="../assets/bmw.jpg" alt="BMW" width="640" height="360" loading="lazy">
       </section>
-      <section>
-        <h2>Наша команда</h2>
-        <p>Леонардо, Донателло, Микеланджело, Рафаэль и Крыс</p>
+      <section class="section">
+        <h2 class="section__title">Наш автопарк</h2>
+        <p>"2 некро немца, 1 свежий"</p>
       </section>
     </main>
     <footer>
-      <p>&copy; 2023 Фанатка Айсгергерта. Все права защищены.</p>
+      <p>&copy; 2023 Бумер. Все права защищены.</p>
       <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
   </body>

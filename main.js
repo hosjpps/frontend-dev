@@ -35,11 +35,14 @@ phone?.addEventListener('input', () => {
 
 // Form validation
 form?.addEventListener('submit', (e) => {
+  console.log('Form submit event triggered'); // Отладка
+  
   // 1) Сброс кастомных сообщений
   [...form.elements].forEach(el => el.setCustomValidity?.(''));
 
   // 2) Проверка встроенных ограничений
   if (!form.checkValidity()) {
+    console.log('Form validation failed'); // Отладка
     e.preventDefault();
     // Пример: таргетированное сообщение
     const email = form.elements.email;
@@ -55,8 +58,50 @@ form?.addEventListener('submit', (e) => {
   }
 
   // 3) Успешная «отправка» (без сервера)
+  console.log('Form validation passed, showing notification'); // Отладка
   e.preventDefault();
+  
+  // Показываем уведомление об успешной отправке
+  showSuccessNotification();
+  
   // Если форма внутри <dialog>, закрываем окно:
   document.getElementById('contactDialog')?.close('success');
   form.reset();
 });
+
+// Функция для показа уведомления об успешной отправке
+function showSuccessNotification() {
+  console.log('showSuccessNotification called'); // Отладка
+  
+  // Создаем элемент уведомления
+  const notification = document.createElement('div');
+  notification.className = 'success-notification';
+  notification.innerHTML = `
+    <div class="notification-content">
+      <span class="notification-icon">✓</span>
+      <span class="notification-text">Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.</span>
+      <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+    </div>
+  `;
+  
+  console.log('Notification element created:', notification); // Отладка
+  
+  // Добавляем уведомление в body
+  document.body.appendChild(notification);
+  console.log('Notification added to body'); // Отладка
+  
+  // Показываем уведомление с анимацией
+  setTimeout(() => {
+    notification.classList.add('show');
+    console.log('Show class added'); // Отладка
+  }, 100);
+  
+  // Автоматически скрываем через 5 секунд
+  setTimeout(() => {
+    notification.classList.add('hide');
+    setTimeout(() => {
+      notification.remove();
+      console.log('Notification removed'); // Отладка
+    }, 300);
+  }, 5000);
+}

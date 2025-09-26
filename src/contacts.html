@@ -3,38 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - Macan Daddy</title>
+    <title>Контакты - Бумер</title>
     <meta name="description" content="Контактная информация нашей компании">
-    <link rel="icon" href="assets/free-icon-naruto-1181922.png" type="image/x-icon">
+    <link rel="icon" href="../assets/free-icon-round-16199695.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
   </head>
   <body>
-    <header>
-      <a href="/">Macan Daddy</a>
-      <!-- Главное меню навигации -->
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
+    <header class="site-header">
+      <a class="site-header__brand" href="/">Бумер</a>
+      <!-- Навигация -->
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="container">
       <!--"хлебные крошки" -->
-      <nav aria-label="Хлебные крошки">
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a href="index.html">Главная</a> →
         <span>Контакты</span>
       </nav>
       <h1>Контакты</h1>
-      <section>
-        <h2>Свяжитесь с нами</h2>
+      <section class="section">
+        <h2 class="section__title">Свяжитесь с нами</h2>
         <p>Адрес: г. Москва, ул. Примерная, д. 1</p>
         <p>Телефон: +7 (123) 456-78-90</p>
-        <p>Email: info@example.com</p>
+        <p>Email: beha@necro.com</p>
+        <div class="media">
+          <iframe src="https://rutube.ru/video/e5c47469f5096396c43d0d575dfd5a88" title="Видео о компании" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
       </section>
     </main>
     <footer>
-      <p>&copy; 2023 Macan Daddy. Все права защищены.</p>
+      <p>&copy; 2023 Бумер. Все права защищены.</p>
       <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
   </body>
