@@ -10,16 +10,20 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="site-header__brand" href="/">Бумер</a>
-      <!-- Навигация -->
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </header>
+        <a class="site-header__brand" href="/">Бумер</a>
+        <!-- Меню навигации -->
+        <nav class="site-nav" aria-label="Основная навигация">
+          <ul class="site-nav__list">
+            <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+            <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+            <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+        <!-- Переключатель темы -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon"></span>
+        </button>
+      </header>
     <main class="container">
       <!--"хлебные крошки" -->
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
@@ -41,5 +45,6 @@
       <p>&copy; 2023 Бумер. Все права защищены.</p>
       <p>Телефон: +7 (123) 456-78-90</p>
     </footer>
+    <script src="../main.js" defer></script>
   </body>
 </html>

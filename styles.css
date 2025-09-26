@@ -25,6 +25,36 @@ body.theme-dark {
   --color-primary: #6aa2ff;
 }
 
+/* Переключатель темы */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--color-fg);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  order: 3;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.theme-toggle__icon {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.theme-toggle__icon::before {
+  content: '🌙';
+}
+
+body.theme-dark .theme-toggle__icon::before {
+  content: '☀️';
+}
+
 /* БАЗА: читаемость и предсказуемость размеров */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -101,15 +131,25 @@ body {
   background: var(--color-bg);
   padding: var(--space-3);
   box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
 }
 .site-header__brand {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-primary);
   text-decoration: none;
+  order: 1;
 }
 .site-nav {
-  margin-top: var(--space-2);
+  display: flex;
+  align-items: center;
+  order: 2;
+  flex-grow: 1;
+  justify-content: center;
 }
 .site-nav__list {
   list-style: none;

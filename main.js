@@ -5,6 +5,30 @@ const closeBtn = document.getElementById('closeDialog');
 const form = document.getElementById('contactForm');
 let lastActive = null;
 
+// Theme toggle logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Загружаем сохраненную тему
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  body.classList.add('theme-dark');
+} else if (savedTheme === 'light') {
+  body.classList.remove('theme-dark');
+}
+
+// Обработчик переключения темы
+themeToggle?.addEventListener('click', () => {
+  body.classList.toggle('theme-dark');
+  
+  // Сохраняем выбор пользователя
+  if (body.classList.contains('theme-dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
 openBtn.addEventListener('click', () => {
   lastActive = document.activeElement;
   dlg.showModal();
